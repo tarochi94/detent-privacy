@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detent - サポート & プライバシーポリシー</title>
+  <title>Detent - Support & Privacy Policy</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -22,6 +22,28 @@
     header .icon { font-size: 3rem; margin-bottom: 0.5rem; color: #00ebf2; }
     header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; color: #00ebf2; }
     header p { font-size: 1rem; opacity: 0.65; }
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: rgba(0, 235, 242, 0.05);
+      border-bottom: 1px solid rgba(0, 235, 242, 0.12);
+    }
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: #00d9e0;
+      padding: 0.7rem 2rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-family: inherit;
+      opacity: 0.5;
+    }
+    .lang-switch button.active {
+      opacity: 1;
+      border-bottom-color: #00ebf2;
+    }
     nav {
       background: rgba(0, 235, 242, 0.08);
       display: flex;
@@ -88,6 +110,8 @@
       font-size: 0.85rem;
     }
     strong { color: #00d9e0; }
+    .lang { display: none; }
+    .lang.active { display: block; }
   </style>
 </head>
 <body>
@@ -98,15 +122,98 @@
   <p>Fidget Wheel</p>
 </header>
 
+<div class="lang-switch">
+  <button id="btn-en" class="active" onclick="switchLang('en')">English</button>
+  <button id="btn-ja" onclick="switchLang('ja')">日本語</button>
+</div>
+
+<!-- ===== ENGLISH ===== -->
+<div id="lang-en" class="lang active">
 <nav>
-  <a href="#support">サポート</a>
-  <a href="#faq">よくある質問</a>
-  <a href="#privacy">プライバシーポリシー</a>
+  <a href="#support-en">Support</a>
+  <a href="#faq-en">FAQ</a>
+  <a href="#privacy-en">Privacy Policy</a>
 </nav>
 
 <div class="container">
+  <section id="support-en">
+    <h2>Support <span class="badge">Contact</span></h2>
+    <p>Thank you for using Detent. If you have any questions or issues, please contact us at the email below.</p>
+    <div class="contact-box">
+      <p>&#128231; Contact Email</p>
+      <a href="mailto:ryotaro.apps&#64;gmail.com">ryotaro.apps&#64;gmail.com</a>
+      <p style="margin-top:0.6rem; font-size:0.85rem; color:#666;">We typically respond within 2-3 business days.</p>
+    </div>
+    <h3>Please include in your message</h3>
+    <ul>
+      <li>Your iOS version</li>
+      <li>App version</li>
+      <li>Description of the issue</li>
+    </ul>
+  </section>
 
-  <section id="support">
+  <section id="faq-en">
+    <h2>Frequently Asked Questions</h2>
+    <h3>Q. Where is my rotation data stored?</h3>
+    <p>Rotation data is stored locally on your device. Only when using the ranking feature, anonymous rotation data is sent to Apple's iCloud (CloudKit).</p>
+
+    <h3>Q. Is the leaderboard anonymous?</h3>
+    <p>Yes. The leaderboard only displays rotation counts. No usernames or personal information is shown.</p>
+
+    <h3>Q. What happens to my ranking when I reset?</h3>
+    <p>Long-pressing the reset button in settings resets both your local rotation count and your leaderboard score to 0.</p>
+
+    <h3>Q. How do I change the haptic feedback style?</h3>
+    <p>In settings, choose from 4 styles: Sharp, Soft, Heavy, or Click.</p>
+
+    <h3>Q. The app isn't working properly?</h3>
+    <p>Try closing and reopening the app, or update to the latest version of iOS and the app. If the issue persists, please contact us.</p>
+  </section>
+
+  <section id="privacy-en">
+    <h2>Privacy Policy</h2>
+    <p>This privacy policy describes how Detent ("the App") handles your information.</p>
+
+    <h3>Information We Collect</h3>
+    <ul>
+      <li><strong>Rotation data:</strong> Your total rotation count is stored anonymously on Apple's iCloud (CloudKit) for the leaderboard feature.</li>
+      <li><strong>Anonymous identifier:</strong> An identifier automatically assigned by Apple, used to prevent duplicate leaderboard entries. It contains no personally identifiable information.</li>
+      <li><strong>Settings data:</strong> Wheel size, position, haptic style, and other preferences are stored locally on your device only.</li>
+    </ul>
+
+    <h3>Third-Party Sharing</h3>
+    <p>We do not sell or share your information with third parties. Leaderboard data is publicly visible to all users in anonymous form.</p>
+
+    <h3>Advertising</h3>
+    <p>This app does not display ads.</p>
+
+    <h3>Data Deletion</h3>
+    <p>You can reset your leaderboard score to 0 using the reset button in the app. Deleting the app removes all locally stored settings.</p>
+
+    <h3>Children's Privacy</h3>
+    <p>This app is intended for all ages and does not knowingly collect personal information from children under 13.</p>
+
+    <h3>Changes to This Policy</h3>
+    <p>This policy may be updated as needed. Changes will be posted on this page.</p>
+
+    <h3>Contact</h3>
+    <p>For privacy-related questions, email <a href="mailto:ryotaro.apps&#64;gmail.com" style="color:#00d9e0;">ryotaro.apps&#64;gmail.com</a>.</p>
+
+    <p style="margin-top:1.5rem; font-size:0.85rem; color:#555;">Last updated: April 19, 2026</p>
+  </section>
+</div>
+</div>
+
+<!-- ===== JAPANESE ===== -->
+<div id="lang-ja" class="lang">
+<nav>
+  <a href="#support-ja">サポート</a>
+  <a href="#faq-ja">よくある質問</a>
+  <a href="#privacy-ja">プライバシーポリシー</a>
+</nav>
+
+<div class="container">
+  <section id="support-ja">
     <h2>サポート <span class="badge">お問い合わせ</span></h2>
     <p>Detent をご利用いただきありがとうございます。ご不明な点や問題が発生した場合は、下記のメールアドレスまでお気軽にお問い合わせください。</p>
     <div class="contact-box">
@@ -122,7 +229,7 @@
     </ul>
   </section>
 
-  <section id="faq">
+  <section id="faq-ja">
     <h2>よくある質問</h2>
     <h3>Q. 回転数のデータはどこに保存されますか？</h3>
     <p>回転数はお使いの端末内に保存されます。ランキング機能を使用する場合のみ、匿名の回転数データが Apple の iCloud (CloudKit) に送信されます。</p>
@@ -140,7 +247,7 @@
     <p>アプリを一度終了して再起動するか、iOS およびアプリを最新バージョンにアップデートしてお試しください。改善しない場合はお問い合わせください。</p>
   </section>
 
-  <section id="privacy">
+  <section id="privacy-ja">
     <h2>プライバシーポリシー</h2>
     <p>本プライバシーポリシーは、Detent（以下「本アプリ」）における個人情報の取り扱いについて説明します。</p>
 
@@ -171,13 +278,24 @@
 
     <p style="margin-top:1.5rem; font-size:0.85rem; color:#555;">最終更新日：2026年4月19日</p>
   </section>
-
+</div>
 </div>
 
 <footer>
   <p>&copy; 2026 Detent. All rights reserved.</p>
 </footer>
 
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.getElementById('btn-' + lang).classList.add('active');
+  document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
+}
+// Auto-detect
+if (navigator.language.startsWith('ja')) switchLang('ja');
+</script>
+
 </body>
 </html>
-
